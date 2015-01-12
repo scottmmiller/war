@@ -27,6 +27,8 @@ $(document).ready(function() {
 			deck.push({number: j+1, suit: suit});
 		}
 	}
+
+
 	
 	//what does this do?
 	var shuffle = function(array) { 
@@ -44,17 +46,36 @@ $(document).ready(function() {
 	}
 	
 	//Now call the shuffle function and save the result of what shuffle returns into your deck variable
-	
+	deck = shuffle(deck);
+
 	var cards_player_1 = [];
 	var cards_player_2 = [];
 	// write a function called deal that will evently divide the deck up between the two players
-	
+	var deal = function () {
+		for (var i = 0; i < deck.length; i++) {
+			if (i % 2 === 0) {
+				cards_player_1.push(deck[i]);
+			}
+			else {
+				cards_player_2.push(deck[i]);
+			};
+		};
+	};
+	deal();
+
 	
 	//create a function (algorithm) called "war" that takes two cards as parameters, compares them and returns a winner. A tie should return false.
-	var war = function(){
-	
-		
-	}
+	var war = function(card_1, card_2){
+		if (card_1 > card_2) {
+			return card_1;
+		}
+		else if (card_2 > card_1) {
+			return card_2;
+		}
+		else {
+			return false;
+		};
+	};
 	
 	var advance = function(){
 		//take the top two cards and display them
