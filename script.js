@@ -113,24 +113,85 @@ $(document).ready(function() {
 				// cards_player_1.splice(0, 1);
 				// cards_player_2.push(cards_player_2[0]);
 				// cards_player_2.splice(0, 1);
+			 	if (cards_player_1[4].number > cards_player_2[4].number) {
+			 		for (var i = 0; i < 5; i++) {
+			 			cards_player_1.push(cards_player_1[i]);
+			 			cards_player_1.push(cards_player_2[i]);
+				 		cards_player_1.splice(0, 1);
+				 		cards_player_2.splice(0, 1);
+			 		};
+
+
+			 		// cards_player_1.push(cards_player_1[0, 1, 2, 3, 4], cards_player_2[0, 1, 2, 3, 4]);
+			 	}
+			 	else if (cards_player_2[4].number > cards_player_1[4].number) {
+					for (var i = 0; i < 5; i++) {
+						cards_player_2.push(cards_player_2[i]);
+						cards_player_2.push(cards_player_1[i]);
+						cards_player_2.splice(0, 1);
+						cards_player_1.splice(0, 1);
+					};
 
 
 
 
+					// cards_player_2.push(cards_player_2[0, 1, 2, 3, 4], cards_player_1[0, 1, 2, 3, 4]);
+				}
+			 	else {
+			 		alert("You broke the game, MORON!!!");
 
+
+				 	// if (cards_player_1[8].number > cards_player_2[8].number) {
+				 	// 	for (var i = 6; i > 5 || i < 9; i++) {
+				 	// 		cards_player_1.push(cards_player_1[i]);
+				 	// 		cards_player_1.push(cards_player_2[i]);
+					 // 		cards_player_1.splice(5, 6);
+					 // 		cards_player_2.splice(5, 6);
+				 	// 	};
+
+
+				 	// 	// cards_player_1.push(cards_player_1[0, 4], cards_player_2[0, 1, 2, 3, 4]);
+				 	// }
+				 	// else if (cards_player_2[8].number > cards_player_1[8].number) {
+						// for (var i = 6; i > 5 || i < 9; i++) {
+						// 	cards_player_2.push(cards_player_2[i]);
+						// 	cards_player_2.push(cards_player_1[i]);
+						// 	cards_player_2.splice(5, 6);
+						// 	cards_player_1.splice(5, 6);
+						// };
+
+
+
+				 	// if (cards_player_1[8].number > cards_player_2[8].number) {
+				 	// 	cards_player_1.push(cards_player_1[5, 6, 7, 8], cards_player_2[5, 6, 7, 8]);
+				 	// 	cards_player_1.splice(5, 9);
+				 	// 	cards_player_2.splice(5, 9);
+
+				 	// }
+				 	// else if (cards_player_2[8].number > cards_player_1[8].number) {
+						// cards_player_2.push(cards_player_2[5, 6, 7, 8], cards_player_1[5, 6, 7, 8]);
+						// cards_player_2.splice(5, 9);
+						// cards_player_1.splice(5, 9);
+				 	// }
+				};
 			};
 
-		 var blackDiamond = war(false);
-		 	// var cards_player_1 = cards_player_1.slice(0, 4);
-		 	// var cards_player_2 = cards_player_2.slice(0, 4);
-		 	if (cards_player_1[4] > cards_player_2[4]) {
 
 
-		 	}
-		 	else if (cards_player_2[4]) > cards_player_1[4]) {
-		 	}
-		 	else {
-		 		return false;
+
+			
+
+		 // var blackDiamond = war(false);
+		 // 	// var cards_player_1 = cards_player_1.slice(0, 4);
+		 // 	// var cards_player_2 = cards_player_2.slice(0, 4);
+		 // 	if (cards_player_1[4] > cards_player_2[4]) {
+
+
+		 // 	}
+		 // 	else if (cards_player_2[4]) > cards_player_1[4]) {
+		 // 	}
+		 // 	else {
+		 // 		return false;
 
 
 
