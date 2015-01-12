@@ -50,7 +50,7 @@ $(document).ready(function() {
 
 	var cards_player_1 = [];
 	var cards_player_2 = [];
-	// write a function called deal that will evently divide the deck up between the two players
+	// write a function called deal that will evenly divide the deck up between the two players
 	var deal = function () {
 		for (var i = 0; i < deck.length; i++) {
 			if (i % 2 === 0) {
@@ -67,16 +67,16 @@ $(document).ready(function() {
 	//create a function (algorithm) called "war" that takes two cards as parameters, compares them and returns a winner. A tie should return false.
 	var war = function(card_1, card_2){
 		if (card_1 > card_2) {
-			return card_1;
+			return 1;
 		}
 		else if (card_2 > card_1) {
-			return card_2;
+			return 2;
 		}
 		else {
 			return false;
 		};
 	};
-	
+
 	var advance = function(){
 		//take the top two cards and display them
 		if (cards_player_1.length) {
@@ -96,6 +96,44 @@ $(document).ready(function() {
 		//give the winner both cards (at end of deck)
 	var play = function(){
 		
+		var warCard = war(cards_player_1[0].number, cards_player_2[0].number);
+			if (1 === warCard) {
+				cards_player_1.push(cards_player_1[0], cards_player_2[0]);
+				cards_player_1.splice(0, 1);
+				cards_player_2.splice(0, 1);
+			}
+			else if (2 === warCard) { 
+				cards_player_2.push(cards_player_2[0], cards_player_1[0]);
+				cards_player_2.splice(0, 1);
+				cards_player_1.splice(0, 1);
+			}
+			else {
+				// console.log("tie");
+				// cards_player_1.push(cards_player_1[0]);
+				// cards_player_1.splice(0, 1);
+				// cards_player_2.push(cards_player_2[0]);
+				// cards_player_2.splice(0, 1);
+
+
+
+
+
+			};
+
+		 var blackDiamond = war(false);
+		 	// var cards_player_1 = cards_player_1.slice(0, 4);
+		 	// var cards_player_2 = cards_player_2.slice(0, 4);
+		 	if (cards_player_1[4] > cards_player_2[4]) {
+
+
+		 	}
+		 	else if (cards_player_2[4]) > cards_player_1[4]) {
+		 	}
+		 	else {
+		 		return false;
+
+
+
 		//this function (defined below) will continue to the next turn
 		advance();
 	}
